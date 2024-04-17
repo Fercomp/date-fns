@@ -1,0 +1,32 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.lastDayOfMonth = void 0;
+const index_js_1 = require("../toDate/index.js");
+/**
+ * @name lastDayOfMonth
+ * @category Month Helpers
+ * @summary Return the last day of a month for the given date.
+ *
+ * @description
+ * Return the last day of a month for the given date.
+ * The result will be in the local timezone.
+ *
+ * @typeParam DateType - The `Date` type, the function operates on. Gets inferred from passed arguments. Allows to use extensions like [`UTCDate`](https://github.com/date-fns/utc).
+ *
+ * @param date - The original date
+ *
+ * @returns The last day of a month
+ *
+ * @example
+ * // The last day of a month for 2 September 2014 11:55:00:
+ * const result = lastDayOfMonth(new Date(2014, 8, 2, 11, 55, 0))
+ * //=> Tue Sep 30 2014 00:00:00
+ */
+function lastDayOfMonth(date) {
+    const _date = (0, index_js_1.toDate)(date);
+    const month = _date.getMonth();
+    _date.setFullYear(_date.getFullYear(), month + 1, 0);
+    _date.setHours(0, 0, 0, 0);
+    return _date;
+}
+exports.lastDayOfMonth = lastDayOfMonth;
