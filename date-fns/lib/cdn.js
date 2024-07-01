@@ -1347,10 +1347,22 @@ function ownKeys(e, r) {var t = Object.keys(e);if (Object.getOwnPropertySymbols)
     return _toDate(date).getDay() === 0;
   }
 
+  // lib/_lib/defaultOptions.mjs
+  function getDefaultOptions() {
+    return defaultOptions;
+  }
+  function setDefaultOptions(newOptions) {
+    defaultOptions = newOptions;
+  }
+  var defaultOptions = {};
+
   // lib/isWeekend.mjs
-  function _isWeekend(date) {
+  function _isWeekend(date, options) {var _ref, _ref2, _ref3, _options$weekendDays, _options$locale, _defaultOptions3$loca;
     var day = _toDate(date).getDay();
-    return day === 0 || day === 6;
+    var defaultOptions3 = getDefaultOptions();
+    var weekendDays = (_ref = (_ref2 = (_ref3 = (_options$weekendDays = options === null || options === void 0 ? void 0 : options.weekendDays) !== null && _options$weekendDays !== void 0 ? _options$weekendDays : options === null || options === void 0 || (_options$locale = options.locale) === null || _options$locale === void 0 || (_options$locale = _options$locale.options) === null || _options$locale === void 0 ? void 0 : _options$locale.weekendDays) !== null && _ref3 !== void 0 ? _ref3 : defaultOptions3.weekendDays) !== null && _ref2 !== void 0 ? _ref2 : (_defaultOptions3$loca = defaultOptions3.locale) === null || _defaultOptions3$loca === void 0 || (_defaultOptions3$loca = _defaultOptions3$loca.options) === null || _defaultOptions3$loca === void 0 ? void 0 : _defaultOptions3$loca.weekendDays) !== null && _ref !== void 0 ? _ref : [0, 6];
+    var aux = weekendDays;
+    return aux.includes(day);
   }
 
   // lib/addBusinessDays.mjs
@@ -1413,19 +1425,10 @@ function ownKeys(e, r) {var t = Object.keys(e);if (Object.getOwnPropertySymbols)
   function _addHours(date, amount) {
     return _addMilliseconds(date, amount * millisecondsInHour);
   }
-  // lib/_lib/defaultOptions.mjs
-  function getDefaultOptions() {
-    return defaultOptions;
-  }
-  function setDefaultOptions(newOptions) {
-    defaultOptions = newOptions;
-  }
-  var defaultOptions = {};
-
   // lib/startOfWeek.mjs
-  function _startOfWeek(date, options) {var _ref, _ref2, _ref3, _options$weekStartsOn, _options$locale, _defaultOptions3$loca;
-    var defaultOptions3 = getDefaultOptions();
-    var weekStartsOn = (_ref = (_ref2 = (_ref3 = (_options$weekStartsOn = options === null || options === void 0 ? void 0 : options.weekStartsOn) !== null && _options$weekStartsOn !== void 0 ? _options$weekStartsOn : options === null || options === void 0 || (_options$locale = options.locale) === null || _options$locale === void 0 || (_options$locale = _options$locale.options) === null || _options$locale === void 0 ? void 0 : _options$locale.weekStartsOn) !== null && _ref3 !== void 0 ? _ref3 : defaultOptions3.weekStartsOn) !== null && _ref2 !== void 0 ? _ref2 : (_defaultOptions3$loca = defaultOptions3.locale) === null || _defaultOptions3$loca === void 0 || (_defaultOptions3$loca = _defaultOptions3$loca.options) === null || _defaultOptions3$loca === void 0 ? void 0 : _defaultOptions3$loca.weekStartsOn) !== null && _ref !== void 0 ? _ref : 0;
+  function _startOfWeek(date, options) {var _ref4, _ref5, _ref6, _options$weekStartsOn, _options$locale2, _defaultOptions4$loca;
+    var defaultOptions4 = getDefaultOptions();
+    var weekStartsOn = (_ref4 = (_ref5 = (_ref6 = (_options$weekStartsOn = options === null || options === void 0 ? void 0 : options.weekStartsOn) !== null && _options$weekStartsOn !== void 0 ? _options$weekStartsOn : options === null || options === void 0 || (_options$locale2 = options.locale) === null || _options$locale2 === void 0 || (_options$locale2 = _options$locale2.options) === null || _options$locale2 === void 0 ? void 0 : _options$locale2.weekStartsOn) !== null && _ref6 !== void 0 ? _ref6 : defaultOptions4.weekStartsOn) !== null && _ref5 !== void 0 ? _ref5 : (_defaultOptions4$loca = defaultOptions4.locale) === null || _defaultOptions4$loca === void 0 || (_defaultOptions4$loca = _defaultOptions4$loca.options) === null || _defaultOptions4$loca === void 0 ? void 0 : _defaultOptions4$loca.weekStartsOn) !== null && _ref4 !== void 0 ? _ref4 : 0;
     var _date = _toDate(date);
     var day = _date.getDay();
     var diff = (day < weekStartsOn ? 7 : 0) + day - weekStartsOn;
@@ -2117,9 +2120,9 @@ function ownKeys(e, r) {var t = Object.keys(e);if (Object.getOwnPropertySymbols)
     return _date;
   }
   // lib/endOfWeek.mjs
-  function _endOfWeek(date, options) {var _ref4, _ref5, _ref6, _options$weekStartsOn2, _options$locale2, _defaultOptions4$loca;
-    var defaultOptions4 = getDefaultOptions();
-    var weekStartsOn = (_ref4 = (_ref5 = (_ref6 = (_options$weekStartsOn2 = options === null || options === void 0 ? void 0 : options.weekStartsOn) !== null && _options$weekStartsOn2 !== void 0 ? _options$weekStartsOn2 : options === null || options === void 0 || (_options$locale2 = options.locale) === null || _options$locale2 === void 0 || (_options$locale2 = _options$locale2.options) === null || _options$locale2 === void 0 ? void 0 : _options$locale2.weekStartsOn) !== null && _ref6 !== void 0 ? _ref6 : defaultOptions4.weekStartsOn) !== null && _ref5 !== void 0 ? _ref5 : (_defaultOptions4$loca = defaultOptions4.locale) === null || _defaultOptions4$loca === void 0 || (_defaultOptions4$loca = _defaultOptions4$loca.options) === null || _defaultOptions4$loca === void 0 ? void 0 : _defaultOptions4$loca.weekStartsOn) !== null && _ref4 !== void 0 ? _ref4 : 0;
+  function _endOfWeek(date, options) {var _ref7, _ref8, _ref9, _options$weekStartsOn2, _options$locale3, _defaultOptions5$loca;
+    var defaultOptions5 = getDefaultOptions();
+    var weekStartsOn = (_ref7 = (_ref8 = (_ref9 = (_options$weekStartsOn2 = options === null || options === void 0 ? void 0 : options.weekStartsOn) !== null && _options$weekStartsOn2 !== void 0 ? _options$weekStartsOn2 : options === null || options === void 0 || (_options$locale3 = options.locale) === null || _options$locale3 === void 0 || (_options$locale3 = _options$locale3.options) === null || _options$locale3 === void 0 ? void 0 : _options$locale3.weekStartsOn) !== null && _ref9 !== void 0 ? _ref9 : defaultOptions5.weekStartsOn) !== null && _ref8 !== void 0 ? _ref8 : (_defaultOptions5$loca = defaultOptions5.locale) === null || _defaultOptions5$loca === void 0 || (_defaultOptions5$loca = _defaultOptions5$loca.options) === null || _defaultOptions5$loca === void 0 ? void 0 : _defaultOptions5$loca.weekStartsOn) !== null && _ref7 !== void 0 ? _ref7 : 0;
     var _date = _toDate(date);
     var day = _date.getDay();
     var diff = (day < weekStartsOn ? -7 : 0) + 6 - (day - weekStartsOn);
@@ -2709,11 +2712,11 @@ function ownKeys(e, r) {var t = Object.keys(e);if (Object.getOwnPropertySymbols)
   }
 
   // lib/getWeekYear.mjs
-  function _getWeekYear(date, options) {var _ref7, _ref8, _ref9, _options$firstWeekCon, _options$locale3, _defaultOptions5$loca;
+  function _getWeekYear(date, options) {var _ref10, _ref11, _ref12, _options$firstWeekCon, _options$locale4, _defaultOptions6$loca;
     var _date = _toDate(date);
     var year = _date.getFullYear();
-    var defaultOptions5 = getDefaultOptions();
-    var firstWeekContainsDate = (_ref7 = (_ref8 = (_ref9 = (_options$firstWeekCon = options === null || options === void 0 ? void 0 : options.firstWeekContainsDate) !== null && _options$firstWeekCon !== void 0 ? _options$firstWeekCon : options === null || options === void 0 || (_options$locale3 = options.locale) === null || _options$locale3 === void 0 || (_options$locale3 = _options$locale3.options) === null || _options$locale3 === void 0 ? void 0 : _options$locale3.firstWeekContainsDate) !== null && _ref9 !== void 0 ? _ref9 : defaultOptions5.firstWeekContainsDate) !== null && _ref8 !== void 0 ? _ref8 : (_defaultOptions5$loca = defaultOptions5.locale) === null || _defaultOptions5$loca === void 0 || (_defaultOptions5$loca = _defaultOptions5$loca.options) === null || _defaultOptions5$loca === void 0 ? void 0 : _defaultOptions5$loca.firstWeekContainsDate) !== null && _ref7 !== void 0 ? _ref7 : 1;
+    var defaultOptions6 = getDefaultOptions();
+    var firstWeekContainsDate = (_ref10 = (_ref11 = (_ref12 = (_options$firstWeekCon = options === null || options === void 0 ? void 0 : options.firstWeekContainsDate) !== null && _options$firstWeekCon !== void 0 ? _options$firstWeekCon : options === null || options === void 0 || (_options$locale4 = options.locale) === null || _options$locale4 === void 0 || (_options$locale4 = _options$locale4.options) === null || _options$locale4 === void 0 ? void 0 : _options$locale4.firstWeekContainsDate) !== null && _ref12 !== void 0 ? _ref12 : defaultOptions6.firstWeekContainsDate) !== null && _ref11 !== void 0 ? _ref11 : (_defaultOptions6$loca = defaultOptions6.locale) === null || _defaultOptions6$loca === void 0 || (_defaultOptions6$loca = _defaultOptions6$loca.options) === null || _defaultOptions6$loca === void 0 ? void 0 : _defaultOptions6$loca.firstWeekContainsDate) !== null && _ref10 !== void 0 ? _ref10 : 1;
     var firstWeekOfNextYear = _constructFrom(date, 0);
     firstWeekOfNextYear.setFullYear(year + 1, 0, firstWeekContainsDate);
     firstWeekOfNextYear.setHours(0, 0, 0, 0);
@@ -2732,9 +2735,9 @@ function ownKeys(e, r) {var t = Object.keys(e);if (Object.getOwnPropertySymbols)
   }
 
   // lib/startOfWeekYear.mjs
-  function _startOfWeekYear(date, options) {var _ref10, _ref11, _ref12, _options$firstWeekCon2, _options$locale4, _defaultOptions6$loca;
-    var defaultOptions6 = getDefaultOptions();
-    var firstWeekContainsDate = (_ref10 = (_ref11 = (_ref12 = (_options$firstWeekCon2 = options === null || options === void 0 ? void 0 : options.firstWeekContainsDate) !== null && _options$firstWeekCon2 !== void 0 ? _options$firstWeekCon2 : options === null || options === void 0 || (_options$locale4 = options.locale) === null || _options$locale4 === void 0 || (_options$locale4 = _options$locale4.options) === null || _options$locale4 === void 0 ? void 0 : _options$locale4.firstWeekContainsDate) !== null && _ref12 !== void 0 ? _ref12 : defaultOptions6.firstWeekContainsDate) !== null && _ref11 !== void 0 ? _ref11 : (_defaultOptions6$loca = defaultOptions6.locale) === null || _defaultOptions6$loca === void 0 || (_defaultOptions6$loca = _defaultOptions6$loca.options) === null || _defaultOptions6$loca === void 0 ? void 0 : _defaultOptions6$loca.firstWeekContainsDate) !== null && _ref10 !== void 0 ? _ref10 : 1;
+  function _startOfWeekYear(date, options) {var _ref13, _ref14, _ref15, _options$firstWeekCon2, _options$locale5, _defaultOptions7$loca;
+    var defaultOptions7 = getDefaultOptions();
+    var firstWeekContainsDate = (_ref13 = (_ref14 = (_ref15 = (_options$firstWeekCon2 = options === null || options === void 0 ? void 0 : options.firstWeekContainsDate) !== null && _options$firstWeekCon2 !== void 0 ? _options$firstWeekCon2 : options === null || options === void 0 || (_options$locale5 = options.locale) === null || _options$locale5 === void 0 || (_options$locale5 = _options$locale5.options) === null || _options$locale5 === void 0 ? void 0 : _options$locale5.firstWeekContainsDate) !== null && _ref15 !== void 0 ? _ref15 : defaultOptions7.firstWeekContainsDate) !== null && _ref14 !== void 0 ? _ref14 : (_defaultOptions7$loca = defaultOptions7.locale) === null || _defaultOptions7$loca === void 0 || (_defaultOptions7$loca = _defaultOptions7$loca.options) === null || _defaultOptions7$loca === void 0 ? void 0 : _defaultOptions7$loca.firstWeekContainsDate) !== null && _ref13 !== void 0 ? _ref13 : 1;
     var year = _getWeekYear(date, options);
     var firstWeek = _constructFrom(date, 0);
     firstWeek.setFullYear(year, 0, firstWeekContainsDate);
@@ -3425,11 +3428,12 @@ function ownKeys(e, r) {var t = Object.keys(e);if (Object.getOwnPropertySymbols)
   var throwTokens = ["D", "DD", "YY", "YYYY"];
 
   // lib/format.mjs
-  function _format(date, formatStr, options) {var _ref13, _options$locale5, _ref14, _ref15, _ref16, _options$firstWeekCon3, _options$locale6, _defaultOptions7$loca, _ref17, _ref18, _ref19, _options$weekStartsOn3, _options$locale7, _defaultOptions7$loca2;
-    var defaultOptions7 = getDefaultOptions();
-    var locale = (_ref13 = (_options$locale5 = options === null || options === void 0 ? void 0 : options.locale) !== null && _options$locale5 !== void 0 ? _options$locale5 : defaultOptions7.locale) !== null && _ref13 !== void 0 ? _ref13 : enUS;
-    var firstWeekContainsDate = (_ref14 = (_ref15 = (_ref16 = (_options$firstWeekCon3 = options === null || options === void 0 ? void 0 : options.firstWeekContainsDate) !== null && _options$firstWeekCon3 !== void 0 ? _options$firstWeekCon3 : options === null || options === void 0 || (_options$locale6 = options.locale) === null || _options$locale6 === void 0 || (_options$locale6 = _options$locale6.options) === null || _options$locale6 === void 0 ? void 0 : _options$locale6.firstWeekContainsDate) !== null && _ref16 !== void 0 ? _ref16 : defaultOptions7.firstWeekContainsDate) !== null && _ref15 !== void 0 ? _ref15 : (_defaultOptions7$loca = defaultOptions7.locale) === null || _defaultOptions7$loca === void 0 || (_defaultOptions7$loca = _defaultOptions7$loca.options) === null || _defaultOptions7$loca === void 0 ? void 0 : _defaultOptions7$loca.firstWeekContainsDate) !== null && _ref14 !== void 0 ? _ref14 : 1;
-    var weekStartsOn = (_ref17 = (_ref18 = (_ref19 = (_options$weekStartsOn3 = options === null || options === void 0 ? void 0 : options.weekStartsOn) !== null && _options$weekStartsOn3 !== void 0 ? _options$weekStartsOn3 : options === null || options === void 0 || (_options$locale7 = options.locale) === null || _options$locale7 === void 0 || (_options$locale7 = _options$locale7.options) === null || _options$locale7 === void 0 ? void 0 : _options$locale7.weekStartsOn) !== null && _ref19 !== void 0 ? _ref19 : defaultOptions7.weekStartsOn) !== null && _ref18 !== void 0 ? _ref18 : (_defaultOptions7$loca2 = defaultOptions7.locale) === null || _defaultOptions7$loca2 === void 0 || (_defaultOptions7$loca2 = _defaultOptions7$loca2.options) === null || _defaultOptions7$loca2 === void 0 ? void 0 : _defaultOptions7$loca2.weekStartsOn) !== null && _ref17 !== void 0 ? _ref17 : 0;
+  function _format(date, formatStr, options) {var _ref16, _options$locale6, _ref17, _ref18, _ref19, _options$firstWeekCon3, _options$locale7, _defaultOptions8$loca, _ref20, _ref21, _ref22, _options$weekStartsOn3, _options$locale8, _defaultOptions8$loca2, _ref23, _ref24, _ref25, _options$weekendDays2, _options$locale9, _defaultOptions8$loca3;
+    var defaultOptions8 = getDefaultOptions();
+    var locale = (_ref16 = (_options$locale6 = options === null || options === void 0 ? void 0 : options.locale) !== null && _options$locale6 !== void 0 ? _options$locale6 : defaultOptions8.locale) !== null && _ref16 !== void 0 ? _ref16 : enUS;
+    var firstWeekContainsDate = (_ref17 = (_ref18 = (_ref19 = (_options$firstWeekCon3 = options === null || options === void 0 ? void 0 : options.firstWeekContainsDate) !== null && _options$firstWeekCon3 !== void 0 ? _options$firstWeekCon3 : options === null || options === void 0 || (_options$locale7 = options.locale) === null || _options$locale7 === void 0 || (_options$locale7 = _options$locale7.options) === null || _options$locale7 === void 0 ? void 0 : _options$locale7.firstWeekContainsDate) !== null && _ref19 !== void 0 ? _ref19 : defaultOptions8.firstWeekContainsDate) !== null && _ref18 !== void 0 ? _ref18 : (_defaultOptions8$loca = defaultOptions8.locale) === null || _defaultOptions8$loca === void 0 || (_defaultOptions8$loca = _defaultOptions8$loca.options) === null || _defaultOptions8$loca === void 0 ? void 0 : _defaultOptions8$loca.firstWeekContainsDate) !== null && _ref17 !== void 0 ? _ref17 : 1;
+    var weekStartsOn = (_ref20 = (_ref21 = (_ref22 = (_options$weekStartsOn3 = options === null || options === void 0 ? void 0 : options.weekStartsOn) !== null && _options$weekStartsOn3 !== void 0 ? _options$weekStartsOn3 : options === null || options === void 0 || (_options$locale8 = options.locale) === null || _options$locale8 === void 0 || (_options$locale8 = _options$locale8.options) === null || _options$locale8 === void 0 ? void 0 : _options$locale8.weekStartsOn) !== null && _ref22 !== void 0 ? _ref22 : defaultOptions8.weekStartsOn) !== null && _ref21 !== void 0 ? _ref21 : (_defaultOptions8$loca2 = defaultOptions8.locale) === null || _defaultOptions8$loca2 === void 0 || (_defaultOptions8$loca2 = _defaultOptions8$loca2.options) === null || _defaultOptions8$loca2 === void 0 ? void 0 : _defaultOptions8$loca2.weekStartsOn) !== null && _ref20 !== void 0 ? _ref20 : 0;
+    var weekendDays = (_ref23 = (_ref24 = (_ref25 = (_options$weekendDays2 = options === null || options === void 0 ? void 0 : options.weekendDays) !== null && _options$weekendDays2 !== void 0 ? _options$weekendDays2 : options === null || options === void 0 || (_options$locale9 = options.locale) === null || _options$locale9 === void 0 || (_options$locale9 = _options$locale9.options) === null || _options$locale9 === void 0 ? void 0 : _options$locale9.weekendDays) !== null && _ref25 !== void 0 ? _ref25 : defaultOptions8.weekendDays) !== null && _ref24 !== void 0 ? _ref24 : (_defaultOptions8$loca3 = defaultOptions8.locale) === null || _defaultOptions8$loca3 === void 0 || (_defaultOptions8$loca3 = _defaultOptions8$loca3.options) === null || _defaultOptions8$loca3 === void 0 ? void 0 : _defaultOptions8$loca3.weekendDays) !== null && _ref23 !== void 0 ? _ref23 : [0, 6];
     var originalDate = _toDate(date);
     if (!_isValid(originalDate)) {
       throw new RangeError("Invalid time value");
@@ -3463,6 +3467,7 @@ function ownKeys(e, r) {var t = Object.keys(e);if (Object.getOwnPropertySymbols)
     var formatterOptions = {
       firstWeekContainsDate: firstWeekContainsDate,
       weekStartsOn: weekStartsOn,
+      weekendDays: weekendDays,
       locale: locale
     };
     return parts.map(function (part) {
@@ -3489,9 +3494,9 @@ function ownKeys(e, r) {var t = Object.keys(e);if (Object.getOwnPropertySymbols)
   var doubleQuoteRegExp = /''/g;
   var unescapedLatinCharacterRegExp = /[a-zA-Z]/;
   // lib/formatDistance.mjs
-  function formatDistance3(date, baseDate, options) {var _ref20, _options$locale8;
-    var defaultOptions8 = getDefaultOptions();
-    var locale = (_ref20 = (_options$locale8 = options === null || options === void 0 ? void 0 : options.locale) !== null && _options$locale8 !== void 0 ? _options$locale8 : defaultOptions8.locale) !== null && _ref20 !== void 0 ? _ref20 : enUS;
+  function formatDistance3(date, baseDate, options) {var _ref26, _options$locale10;
+    var defaultOptions9 = getDefaultOptions();
+    var locale = (_ref26 = (_options$locale10 = options === null || options === void 0 ? void 0 : options.locale) !== null && _options$locale10 !== void 0 ? _options$locale10 : defaultOptions9.locale) !== null && _ref26 !== void 0 ? _ref26 : enUS;
     var minutesInAlmostTwoDays = 2520;
     var comparison = _compareAsc(date, baseDate);
     if (isNaN(comparison)) {
@@ -3569,9 +3574,9 @@ function ownKeys(e, r) {var t = Object.keys(e);if (Object.getOwnPropertySymbols)
     }
   }
   // lib/formatDistanceStrict.mjs
-  function _formatDistanceStrict(date, baseDate, options) {var _ref21, _options$locale9, _options$roundingMeth;
-    var defaultOptions9 = getDefaultOptions();
-    var locale = (_ref21 = (_options$locale9 = options === null || options === void 0 ? void 0 : options.locale) !== null && _options$locale9 !== void 0 ? _options$locale9 : defaultOptions9.locale) !== null && _ref21 !== void 0 ? _ref21 : enUS;
+  function _formatDistanceStrict(date, baseDate, options) {var _ref27, _options$locale11, _options$roundingMeth;
+    var defaultOptions10 = getDefaultOptions();
+    var locale = (_ref27 = (_options$locale11 = options === null || options === void 0 ? void 0 : options.locale) !== null && _options$locale11 !== void 0 ? _options$locale11 : defaultOptions10.locale) !== null && _ref27 !== void 0 ? _ref27 : enUS;
     var comparison = _compareAsc(date, baseDate);
     if (isNaN(comparison)) {
       throw new RangeError("Invalid time value");
@@ -3642,9 +3647,9 @@ function ownKeys(e, r) {var t = Object.keys(e);if (Object.getOwnPropertySymbols)
     return _formatDistanceStrict(date, _constructNow(date), options);
   }
   // lib/formatDuration.mjs
-  function _formatDuration(duration, options) {var _ref22, _options$locale10, _options$format, _options$zero, _options$delimiter;
-    var defaultOptions10 = getDefaultOptions();
-    var locale = (_ref22 = (_options$locale10 = options === null || options === void 0 ? void 0 : options.locale) !== null && _options$locale10 !== void 0 ? _options$locale10 : defaultOptions10.locale) !== null && _ref22 !== void 0 ? _ref22 : enUS;
+  function _formatDuration(duration, options) {var _ref28, _options$locale12, _options$format, _options$zero, _options$delimiter;
+    var defaultOptions11 = getDefaultOptions();
+    var locale = (_ref28 = (_options$locale12 = options === null || options === void 0 ? void 0 : options.locale) !== null && _options$locale12 !== void 0 ? _options$locale12 : defaultOptions11.locale) !== null && _ref28 !== void 0 ? _ref28 : enUS;
     var format2 = (_options$format = options === null || options === void 0 ? void 0 : options.format) !== null && _options$format !== void 0 ? _options$format : defaultFormat;
     var zero = (_options$zero = options === null || options === void 0 ? void 0 : options.zero) !== null && _options$zero !== void 0 ? _options$zero : false;
     var delimiter = (_options$delimiter = options === null || options === void 0 ? void 0 : options.delimiter) !== null && _options$delimiter !== void 0 ? _options$delimiter : " ";
@@ -3809,12 +3814,12 @@ function ownKeys(e, r) {var t = Object.keys(e);if (Object.getOwnPropertySymbols)
   "Dec"];
 
   // lib/formatRelative.mjs
-  function formatRelative3(date, baseDate, options) {var _ref23, _options$locale11, _ref24, _ref25, _ref26, _options$weekStartsOn4, _options$locale12, _defaultOptions11$loc;
+  function formatRelative3(date, baseDate, options) {var _ref29, _options$locale13, _ref30, _ref31, _ref32, _options$weekStartsOn4, _options$locale14, _defaultOptions12$loc;
     var _date = _toDate(date);
     var _baseDate = _toDate(baseDate);
-    var defaultOptions11 = getDefaultOptions();
-    var locale = (_ref23 = (_options$locale11 = options === null || options === void 0 ? void 0 : options.locale) !== null && _options$locale11 !== void 0 ? _options$locale11 : defaultOptions11.locale) !== null && _ref23 !== void 0 ? _ref23 : enUS;
-    var weekStartsOn = (_ref24 = (_ref25 = (_ref26 = (_options$weekStartsOn4 = options === null || options === void 0 ? void 0 : options.weekStartsOn) !== null && _options$weekStartsOn4 !== void 0 ? _options$weekStartsOn4 : options === null || options === void 0 || (_options$locale12 = options.locale) === null || _options$locale12 === void 0 || (_options$locale12 = _options$locale12.options) === null || _options$locale12 === void 0 ? void 0 : _options$locale12.weekStartsOn) !== null && _ref26 !== void 0 ? _ref26 : defaultOptions11.weekStartsOn) !== null && _ref25 !== void 0 ? _ref25 : (_defaultOptions11$loc = defaultOptions11.locale) === null || _defaultOptions11$loc === void 0 || (_defaultOptions11$loc = _defaultOptions11$loc.options) === null || _defaultOptions11$loc === void 0 ? void 0 : _defaultOptions11$loc.weekStartsOn) !== null && _ref24 !== void 0 ? _ref24 : 0;
+    var defaultOptions12 = getDefaultOptions();
+    var locale = (_ref29 = (_options$locale13 = options === null || options === void 0 ? void 0 : options.locale) !== null && _options$locale13 !== void 0 ? _options$locale13 : defaultOptions12.locale) !== null && _ref29 !== void 0 ? _ref29 : enUS;
+    var weekStartsOn = (_ref30 = (_ref31 = (_ref32 = (_options$weekStartsOn4 = options === null || options === void 0 ? void 0 : options.weekStartsOn) !== null && _options$weekStartsOn4 !== void 0 ? _options$weekStartsOn4 : options === null || options === void 0 || (_options$locale14 = options.locale) === null || _options$locale14 === void 0 || (_options$locale14 = _options$locale14.options) === null || _options$locale14 === void 0 ? void 0 : _options$locale14.weekStartsOn) !== null && _ref32 !== void 0 ? _ref32 : defaultOptions12.weekStartsOn) !== null && _ref31 !== void 0 ? _ref31 : (_defaultOptions12$loc = defaultOptions12.locale) === null || _defaultOptions12$loc === void 0 || (_defaultOptions12$loc = _defaultOptions12$loc.options) === null || _defaultOptions12$loc === void 0 ? void 0 : _defaultOptions12$loc.weekStartsOn) !== null && _ref30 !== void 0 ? _ref30 : 0;
     var diff = _differenceInCalendarDays(_date, _baseDate);
     if (isNaN(diff)) {
       throw new RangeError("Invalid time value");
@@ -3973,9 +3978,9 @@ function ownKeys(e, r) {var t = Object.keys(e);if (Object.getOwnPropertySymbols)
     return Math.trunc(+_toDate(date) / 1000);
   }
   // lib/getWeekOfMonth.mjs
-  function _getWeekOfMonth(date, options) {var _ref27, _ref28, _ref29, _options$weekStartsOn5, _options$locale13, _defaultOptions13$loc;
-    var defaultOptions13 = getDefaultOptions();
-    var weekStartsOn = (_ref27 = (_ref28 = (_ref29 = (_options$weekStartsOn5 = options === null || options === void 0 ? void 0 : options.weekStartsOn) !== null && _options$weekStartsOn5 !== void 0 ? _options$weekStartsOn5 : options === null || options === void 0 || (_options$locale13 = options.locale) === null || _options$locale13 === void 0 || (_options$locale13 = _options$locale13.options) === null || _options$locale13 === void 0 ? void 0 : _options$locale13.weekStartsOn) !== null && _ref29 !== void 0 ? _ref29 : defaultOptions13.weekStartsOn) !== null && _ref28 !== void 0 ? _ref28 : (_defaultOptions13$loc = defaultOptions13.locale) === null || _defaultOptions13$loc === void 0 || (_defaultOptions13$loc = _defaultOptions13$loc.options) === null || _defaultOptions13$loc === void 0 ? void 0 : _defaultOptions13$loc.weekStartsOn) !== null && _ref27 !== void 0 ? _ref27 : 0;
+  function _getWeekOfMonth(date, options) {var _ref33, _ref34, _ref35, _options$weekStartsOn5, _options$locale15, _defaultOptions14$loc;
+    var defaultOptions14 = getDefaultOptions();
+    var weekStartsOn = (_ref33 = (_ref34 = (_ref35 = (_options$weekStartsOn5 = options === null || options === void 0 ? void 0 : options.weekStartsOn) !== null && _options$weekStartsOn5 !== void 0 ? _options$weekStartsOn5 : options === null || options === void 0 || (_options$locale15 = options.locale) === null || _options$locale15 === void 0 || (_options$locale15 = _options$locale15.options) === null || _options$locale15 === void 0 ? void 0 : _options$locale15.weekStartsOn) !== null && _ref35 !== void 0 ? _ref35 : defaultOptions14.weekStartsOn) !== null && _ref34 !== void 0 ? _ref34 : (_defaultOptions14$loc = defaultOptions14.locale) === null || _defaultOptions14$loc === void 0 || (_defaultOptions14$loc = _defaultOptions14$loc.options) === null || _defaultOptions14$loc === void 0 ? void 0 : _defaultOptions14$loc.weekStartsOn) !== null && _ref33 !== void 0 ? _ref33 : 0;
     var currentDayOfMonth = _getDate(date);
     if (isNaN(currentDayOfMonth))
     return NaN;
@@ -4975,9 +4980,9 @@ function ownKeys(e, r) {var t = Object.keys(e);if (Object.getOwnPropertySymbols)
 
 
   // lib/setDay.mjs
-  function _setDay(date, day, options) {var _ref30, _ref31, _ref32, _options$weekStartsOn6, _options$locale14, _defaultOptions14$loc;
-    var defaultOptions14 = getDefaultOptions();
-    var weekStartsOn = (_ref30 = (_ref31 = (_ref32 = (_options$weekStartsOn6 = options === null || options === void 0 ? void 0 : options.weekStartsOn) !== null && _options$weekStartsOn6 !== void 0 ? _options$weekStartsOn6 : options === null || options === void 0 || (_options$locale14 = options.locale) === null || _options$locale14 === void 0 || (_options$locale14 = _options$locale14.options) === null || _options$locale14 === void 0 ? void 0 : _options$locale14.weekStartsOn) !== null && _ref32 !== void 0 ? _ref32 : defaultOptions14.weekStartsOn) !== null && _ref31 !== void 0 ? _ref31 : (_defaultOptions14$loc = defaultOptions14.locale) === null || _defaultOptions14$loc === void 0 || (_defaultOptions14$loc = _defaultOptions14$loc.options) === null || _defaultOptions14$loc === void 0 ? void 0 : _defaultOptions14$loc.weekStartsOn) !== null && _ref30 !== void 0 ? _ref30 : 0;
+  function _setDay(date, day, options) {var _ref36, _ref37, _ref38, _options$weekStartsOn6, _options$locale16, _defaultOptions15$loc;
+    var defaultOptions15 = getDefaultOptions();
+    var weekStartsOn = (_ref36 = (_ref37 = (_ref38 = (_options$weekStartsOn6 = options === null || options === void 0 ? void 0 : options.weekStartsOn) !== null && _options$weekStartsOn6 !== void 0 ? _options$weekStartsOn6 : options === null || options === void 0 || (_options$locale16 = options.locale) === null || _options$locale16 === void 0 || (_options$locale16 = _options$locale16.options) === null || _options$locale16 === void 0 ? void 0 : _options$locale16.weekStartsOn) !== null && _ref38 !== void 0 ? _ref38 : defaultOptions15.weekStartsOn) !== null && _ref37 !== void 0 ? _ref37 : (_defaultOptions15$loc = defaultOptions15.locale) === null || _defaultOptions15$loc === void 0 || (_defaultOptions15$loc = _defaultOptions15$loc.options) === null || _defaultOptions15$loc === void 0 ? void 0 : _defaultOptions15$loc.weekStartsOn) !== null && _ref36 !== void 0 ? _ref36 : 0;
     var _date = _toDate(date);
     var currentDay = _date.getDay();
     var remainder = day % 7;
@@ -5643,11 +5648,12 @@ function ownKeys(e, r) {var t = Object.keys(e);if (Object.getOwnPropertySymbols)
   };
 
   // lib/parse.mjs
-  function _parse(dateStr, formatStr, referenceDate, options) {var _ref33, _options$locale15, _ref34, _ref35, _ref36, _options$firstWeekCon4, _options$locale16, _defaultOptions14$loc2, _ref37, _ref38, _ref39, _options$weekStartsOn7, _options$locale17, _defaultOptions14$loc3;
-    var defaultOptions14 = getDefaultOptions2();
-    var locale = (_ref33 = (_options$locale15 = options === null || options === void 0 ? void 0 : options.locale) !== null && _options$locale15 !== void 0 ? _options$locale15 : defaultOptions14.locale) !== null && _ref33 !== void 0 ? _ref33 : enUS;
-    var firstWeekContainsDate = (_ref34 = (_ref35 = (_ref36 = (_options$firstWeekCon4 = options === null || options === void 0 ? void 0 : options.firstWeekContainsDate) !== null && _options$firstWeekCon4 !== void 0 ? _options$firstWeekCon4 : options === null || options === void 0 || (_options$locale16 = options.locale) === null || _options$locale16 === void 0 || (_options$locale16 = _options$locale16.options) === null || _options$locale16 === void 0 ? void 0 : _options$locale16.firstWeekContainsDate) !== null && _ref36 !== void 0 ? _ref36 : defaultOptions14.firstWeekContainsDate) !== null && _ref35 !== void 0 ? _ref35 : (_defaultOptions14$loc2 = defaultOptions14.locale) === null || _defaultOptions14$loc2 === void 0 || (_defaultOptions14$loc2 = _defaultOptions14$loc2.options) === null || _defaultOptions14$loc2 === void 0 ? void 0 : _defaultOptions14$loc2.firstWeekContainsDate) !== null && _ref34 !== void 0 ? _ref34 : 1;
-    var weekStartsOn = (_ref37 = (_ref38 = (_ref39 = (_options$weekStartsOn7 = options === null || options === void 0 ? void 0 : options.weekStartsOn) !== null && _options$weekStartsOn7 !== void 0 ? _options$weekStartsOn7 : options === null || options === void 0 || (_options$locale17 = options.locale) === null || _options$locale17 === void 0 || (_options$locale17 = _options$locale17.options) === null || _options$locale17 === void 0 ? void 0 : _options$locale17.weekStartsOn) !== null && _ref39 !== void 0 ? _ref39 : defaultOptions14.weekStartsOn) !== null && _ref38 !== void 0 ? _ref38 : (_defaultOptions14$loc3 = defaultOptions14.locale) === null || _defaultOptions14$loc3 === void 0 || (_defaultOptions14$loc3 = _defaultOptions14$loc3.options) === null || _defaultOptions14$loc3 === void 0 ? void 0 : _defaultOptions14$loc3.weekStartsOn) !== null && _ref37 !== void 0 ? _ref37 : 0;
+  function _parse(dateStr, formatStr, referenceDate, options) {var _ref39, _options$locale17, _ref40, _ref41, _ref42, _options$firstWeekCon4, _options$locale18, _defaultOptions15$loc2, _ref43, _ref44, _ref45, _options$weekStartsOn7, _options$locale19, _defaultOptions15$loc3, _ref46, _ref47, _ref48, _options$weekendDays3, _options$locale20, _defaultOptions15$loc4;
+    var defaultOptions15 = getDefaultOptions2();
+    var locale = (_ref39 = (_options$locale17 = options === null || options === void 0 ? void 0 : options.locale) !== null && _options$locale17 !== void 0 ? _options$locale17 : defaultOptions15.locale) !== null && _ref39 !== void 0 ? _ref39 : enUS;
+    var firstWeekContainsDate = (_ref40 = (_ref41 = (_ref42 = (_options$firstWeekCon4 = options === null || options === void 0 ? void 0 : options.firstWeekContainsDate) !== null && _options$firstWeekCon4 !== void 0 ? _options$firstWeekCon4 : options === null || options === void 0 || (_options$locale18 = options.locale) === null || _options$locale18 === void 0 || (_options$locale18 = _options$locale18.options) === null || _options$locale18 === void 0 ? void 0 : _options$locale18.firstWeekContainsDate) !== null && _ref42 !== void 0 ? _ref42 : defaultOptions15.firstWeekContainsDate) !== null && _ref41 !== void 0 ? _ref41 : (_defaultOptions15$loc2 = defaultOptions15.locale) === null || _defaultOptions15$loc2 === void 0 || (_defaultOptions15$loc2 = _defaultOptions15$loc2.options) === null || _defaultOptions15$loc2 === void 0 ? void 0 : _defaultOptions15$loc2.firstWeekContainsDate) !== null && _ref40 !== void 0 ? _ref40 : 1;
+    var weekStartsOn = (_ref43 = (_ref44 = (_ref45 = (_options$weekStartsOn7 = options === null || options === void 0 ? void 0 : options.weekStartsOn) !== null && _options$weekStartsOn7 !== void 0 ? _options$weekStartsOn7 : options === null || options === void 0 || (_options$locale19 = options.locale) === null || _options$locale19 === void 0 || (_options$locale19 = _options$locale19.options) === null || _options$locale19 === void 0 ? void 0 : _options$locale19.weekStartsOn) !== null && _ref45 !== void 0 ? _ref45 : defaultOptions15.weekStartsOn) !== null && _ref44 !== void 0 ? _ref44 : (_defaultOptions15$loc3 = defaultOptions15.locale) === null || _defaultOptions15$loc3 === void 0 || (_defaultOptions15$loc3 = _defaultOptions15$loc3.options) === null || _defaultOptions15$loc3 === void 0 ? void 0 : _defaultOptions15$loc3.weekStartsOn) !== null && _ref43 !== void 0 ? _ref43 : 0;
+    var weekendDays = (_ref46 = (_ref47 = (_ref48 = (_options$weekendDays3 = options === null || options === void 0 ? void 0 : options.weekendDays) !== null && _options$weekendDays3 !== void 0 ? _options$weekendDays3 : options === null || options === void 0 || (_options$locale20 = options.locale) === null || _options$locale20 === void 0 || (_options$locale20 = _options$locale20.options) === null || _options$locale20 === void 0 ? void 0 : _options$locale20.weekendDays) !== null && _ref48 !== void 0 ? _ref48 : defaultOptions15.weekendDays) !== null && _ref47 !== void 0 ? _ref47 : (_defaultOptions15$loc4 = defaultOptions15.locale) === null || _defaultOptions15$loc4 === void 0 || (_defaultOptions15$loc4 = _defaultOptions15$loc4.options) === null || _defaultOptions15$loc4 === void 0 ? void 0 : _defaultOptions15$loc4.weekendDays) !== null && _ref46 !== void 0 ? _ref46 : [0, 6];
     if (formatStr === "") {
       if (dateStr === "") {
         return _toDate(referenceDate);
@@ -5658,6 +5664,7 @@ function ownKeys(e, r) {var t = Object.keys(e);if (Object.getOwnPropertySymbols)
     var subFnOptions = {
       firstWeekContainsDate: firstWeekContainsDate,
       weekStartsOn: weekStartsOn,
+      weekendDays: weekendDays,
       locale: locale
     };
     var setters = [new DateToSystemTimezoneSetter()];
@@ -5904,9 +5911,9 @@ function ownKeys(e, r) {var t = Object.keys(e);if (Object.getOwnPropertySymbols)
     return _date;
   }
   // lib/lastDayOfWeek.mjs
-  function _lastDayOfWeek(date, options) {var _ref40, _ref41, _ref42, _options$weekStartsOn8, _options$locale18, _defaultOptions15$loc;
-    var defaultOptions15 = getDefaultOptions();
-    var weekStartsOn = (_ref40 = (_ref41 = (_ref42 = (_options$weekStartsOn8 = options === null || options === void 0 ? void 0 : options.weekStartsOn) !== null && _options$weekStartsOn8 !== void 0 ? _options$weekStartsOn8 : options === null || options === void 0 || (_options$locale18 = options.locale) === null || _options$locale18 === void 0 || (_options$locale18 = _options$locale18.options) === null || _options$locale18 === void 0 ? void 0 : _options$locale18.weekStartsOn) !== null && _ref42 !== void 0 ? _ref42 : defaultOptions15.weekStartsOn) !== null && _ref41 !== void 0 ? _ref41 : (_defaultOptions15$loc = defaultOptions15.locale) === null || _defaultOptions15$loc === void 0 || (_defaultOptions15$loc = _defaultOptions15$loc.options) === null || _defaultOptions15$loc === void 0 ? void 0 : _defaultOptions15$loc.weekStartsOn) !== null && _ref40 !== void 0 ? _ref40 : 0;
+  function _lastDayOfWeek(date, options) {var _ref49, _ref50, _ref51, _options$weekStartsOn8, _options$locale21, _defaultOptions16$loc;
+    var defaultOptions16 = getDefaultOptions();
+    var weekStartsOn = (_ref49 = (_ref50 = (_ref51 = (_options$weekStartsOn8 = options === null || options === void 0 ? void 0 : options.weekStartsOn) !== null && _options$weekStartsOn8 !== void 0 ? _options$weekStartsOn8 : options === null || options === void 0 || (_options$locale21 = options.locale) === null || _options$locale21 === void 0 || (_options$locale21 = _options$locale21.options) === null || _options$locale21 === void 0 ? void 0 : _options$locale21.weekStartsOn) !== null && _ref51 !== void 0 ? _ref51 : defaultOptions16.weekStartsOn) !== null && _ref50 !== void 0 ? _ref50 : (_defaultOptions16$loc = defaultOptions16.locale) === null || _defaultOptions16$loc === void 0 || (_defaultOptions16$loc = _defaultOptions16$loc.options) === null || _defaultOptions16$loc === void 0 ? void 0 : _defaultOptions16$loc.weekStartsOn) !== null && _ref49 !== void 0 ? _ref49 : 0;
     var _date = _toDate(date);
     var day = _date.getDay();
     var diff = (day < weekStartsOn ? -7 : 0) + 6 - (day - weekStartsOn);
@@ -5986,7 +5993,7 @@ function ownKeys(e, r) {var t = Object.keys(e);if (Object.getOwnPropertySymbols)
   var doubleQuoteRegExp3 = /''/g;
   var unescapedLatinCharacterRegExp3 = /[a-zA-Z]/;
   // lib/milliseconds.mjs
-  function _milliseconds(_ref43)
+  function _milliseconds(_ref52)
 
 
 
@@ -5994,7 +6001,7 @@ function ownKeys(e, r) {var t = Object.keys(e);if (Object.getOwnPropertySymbols)
 
 
 
-  {var years = _ref43.years,months2 = _ref43.months,weeks = _ref43.weeks,days2 = _ref43.days,hours = _ref43.hours,minutes = _ref43.minutes,seconds = _ref43.seconds;
+  {var years = _ref52.years,months2 = _ref52.months,weeks = _ref52.weeks,days2 = _ref52.days,hours = _ref52.hours,minutes = _ref52.minutes,seconds = _ref52.seconds;
     var totalDays = 0;
     if (years)
     totalDays += years * daysInYear;
@@ -6414,10 +6421,10 @@ function ownKeys(e, r) {var t = Object.keys(e);if (Object.getOwnPropertySymbols)
   // lib/setDefaultOptions.mjs
   function setDefaultOptions2(options) {
     var result = {};
-    var defaultOptions16 = getDefaultOptions();
-    for (var property in defaultOptions16) {
-      if (Object.prototype.hasOwnProperty.call(defaultOptions16, property)) {
-        result[property] = defaultOptions16[property];
+    var defaultOptions17 = getDefaultOptions();
+    for (var property in defaultOptions17) {
+      if (Object.prototype.hasOwnProperty.call(defaultOptions17, property)) {
+        result[property] = defaultOptions17[property];
       }
     }
     for (var _property in options) {
@@ -6463,9 +6470,9 @@ function ownKeys(e, r) {var t = Object.keys(e);if (Object.getOwnPropertySymbols)
     return _date;
   }
   // lib/setWeekYear.mjs
-  function _setWeekYear(date, weekYear, options) {var _ref44, _ref45, _ref46, _options$firstWeekCon5, _options$locale19, _defaultOptions17$loc;
-    var defaultOptions17 = getDefaultOptions();
-    var firstWeekContainsDate = (_ref44 = (_ref45 = (_ref46 = (_options$firstWeekCon5 = options === null || options === void 0 ? void 0 : options.firstWeekContainsDate) !== null && _options$firstWeekCon5 !== void 0 ? _options$firstWeekCon5 : options === null || options === void 0 || (_options$locale19 = options.locale) === null || _options$locale19 === void 0 || (_options$locale19 = _options$locale19.options) === null || _options$locale19 === void 0 ? void 0 : _options$locale19.firstWeekContainsDate) !== null && _ref46 !== void 0 ? _ref46 : defaultOptions17.firstWeekContainsDate) !== null && _ref45 !== void 0 ? _ref45 : (_defaultOptions17$loc = defaultOptions17.locale) === null || _defaultOptions17$loc === void 0 || (_defaultOptions17$loc = _defaultOptions17$loc.options) === null || _defaultOptions17$loc === void 0 ? void 0 : _defaultOptions17$loc.firstWeekContainsDate) !== null && _ref44 !== void 0 ? _ref44 : 1;
+  function _setWeekYear(date, weekYear, options) {var _ref53, _ref54, _ref55, _options$firstWeekCon5, _options$locale22, _defaultOptions18$loc;
+    var defaultOptions18 = getDefaultOptions();
+    var firstWeekContainsDate = (_ref53 = (_ref54 = (_ref55 = (_options$firstWeekCon5 = options === null || options === void 0 ? void 0 : options.firstWeekContainsDate) !== null && _options$firstWeekCon5 !== void 0 ? _options$firstWeekCon5 : options === null || options === void 0 || (_options$locale22 = options.locale) === null || _options$locale22 === void 0 || (_options$locale22 = _options$locale22.options) === null || _options$locale22 === void 0 ? void 0 : _options$locale22.firstWeekContainsDate) !== null && _ref55 !== void 0 ? _ref55 : defaultOptions18.firstWeekContainsDate) !== null && _ref54 !== void 0 ? _ref54 : (_defaultOptions18$loc = defaultOptions18.locale) === null || _defaultOptions18$loc === void 0 || (_defaultOptions18$loc = _defaultOptions18$loc.options) === null || _defaultOptions18$loc === void 0 ? void 0 : _defaultOptions18$loc.firstWeekContainsDate) !== null && _ref53 !== void 0 ? _ref53 : 1;
     var _date = _toDate(date);
     var diff = _differenceInCalendarDays(_date, _startOfWeekYear(_date, options));
     var firstWeek = _constructFrom(date, 0);
@@ -6597,7 +6604,7 @@ function ownKeys(e, r) {var t = Object.keys(e);if (Object.getOwnPropertySymbols)
   exports_lib);
 
 
-  //# debugId=87F4AD5F3F38AB7E64756e2164756e21
+  //# debugId=B4873780759B528864756e2164756e21
 })();
 
 //# sourceMappingURL=cdn.js.map

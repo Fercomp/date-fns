@@ -4,24 +4,16 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const lastDayOfMonth_1 = require("./../date-fns/src/lastDayOfMonth");
-const isLeapYear_1 = require("./../date-fns/src/isLeapYear");
-const data = new Date('300-07-01');
+const isWeekend_1 = require("./../date-fns/src/isWeekend");
+const data = new Date("2024-03-25");
+//const data = new Date();
 const port = 8000;
 const app = (0, express_1.default)();
-const day = (0, lastDayOfMonth_1.lastDayOfMonth)(data).getDate();
-const considerGregorian = true;
+const days = [1, 2, 5, 6];
+const todayIsWeekend = (0, isWeekend_1.isWeekend)(data, { weekendDays: days });
 app.get("/", (req, res) => {
-    const result = (0, isLeapYear_1.isLeapYear)(data);
-    res.send(`Is leap year: ${result}`);
+    res.send(`${data} is weekend ${todayIsWeekend}`);
 });
 app.listen(port, () => {
-    console.log("Server rodando ...3");
+    console.log(" Server rodando");
 });
-function sleep(data) {
-    const year = data.getFullYear();
-    if (year < 1582) {
-        return year % 4 === 0;
-    }
-    return year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0);
-}

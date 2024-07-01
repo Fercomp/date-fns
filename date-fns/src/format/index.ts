@@ -362,6 +362,13 @@ export function format<DateType extends Date>(
     defaultOptions.weekStartsOn ??
     defaultOptions.locale?.options?.weekStartsOn ??
     0;
+  
+  const weekendDays =
+    options?.weekendDays ??
+    options?.locale?.options?.weekendDays ??
+    defaultOptions.weekendDays ??
+    defaultOptions.locale?.options?.weekendDays ??
+    [0,6];
 
   const originalDate = toDate(date);
 
@@ -415,6 +422,7 @@ export function format<DateType extends Date>(
   const formatterOptions = {
     firstWeekContainsDate,
     weekStartsOn,
+    weekendDays,
     locale,
   };
 

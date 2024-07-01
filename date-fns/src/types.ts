@@ -192,6 +192,7 @@ export interface StepOptions {
 export interface WeekOptions {
   /** Which day the week starts on. */
   weekStartsOn?: Day;
+  weekendDays?: Day[];
 }
 
 /**

@@ -375,6 +375,13 @@ export function parse<DateType extends Date>(
     defaultOptions.weekStartsOn ??
     defaultOptions.locale?.options?.weekStartsOn ??
     0;
+  
+  const weekendDays =
+    options?.weekendDays ??
+    options?.locale?.options?.weekendDays ??
+    defaultOptions.weekendDays ??
+    defaultOptions.locale?.options?.weekendDays ??
+    [0,6];
 
   if (formatStr === "") {
     if (dateStr === "") {
@@ -387,6 +394,7 @@ export function parse<DateType extends Date>(
   const subFnOptions: ParserOptions = {
     firstWeekContainsDate,
     weekStartsOn,
+    weekendDays,
     locale,
   };
 

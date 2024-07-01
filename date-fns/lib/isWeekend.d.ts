@@ -1,3 +1,10 @@
+import type { LocalizedOptions, WeekOptions } from "./types.js";
+/**
+ * The {@link lastDayOfWeek} function options.
+ */
+export interface WeekendDaysOptions
+  extends LocalizedOptions<"options">,
+    WeekOptions {}
 /**
  * @name isWeekend
  * @category Weekday Helpers
@@ -19,4 +26,5 @@
  */
 export declare function isWeekend<DateType extends Date>(
   date: DateType | number | string,
+  options?: WeekendDaysOptions,
 ): boolean;

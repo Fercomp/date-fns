@@ -2,6 +2,12 @@
 exports.isWeekend = isWeekend;
 var _index = require("./toDate.js");
 
+var _index2 = require("./_lib/defaultOptions.js");
+
+/**
+ * The {@link lastDayOfWeek} function options.
+ */
+
 /**
  * @name isWeekend
  * @category Weekday Helpers
@@ -21,7 +27,16 @@ var _index = require("./toDate.js");
  * const result = isWeekend(new Date(2014, 9, 5))
  * //=> true
  */
-function isWeekend(date) {
+
+function isWeekend(date, options) {
   const day = (0, _index.toDate)(date).getDay();
-  return day === 0 || day === 6;
+  const defaultOptions = (0, _index2.getDefaultOptions)();
+  const weekendDays = options?.weekendDays ??
+    options?.locale?.options?.weekendDays ??
+    defaultOptions.weekendDays ??
+    defaultOptions.locale?.options?.weekendDays ?? [0, 6];
+
+  const aux = weekendDays;
+
+  return aux.includes(day);
 }

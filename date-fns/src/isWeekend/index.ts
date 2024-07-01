@@ -1,4 +1,13 @@
 import { toDate } from "../toDate/index.js";
+import type { LocalizedOptions, WeekOptions, Day } from "../types.js";
+import { getDefaultOptions } from "../_lib/defaultOptions/index.js";
+
+/**
+ * The {@link lastDayOfWeek} function options.
+ */
+export interface WeekendDaysOptions
+  extends LocalizedOptions<"options">,
+    WeekOptions {}
 
 /**
  * @name isWeekend
@@ -19,9 +28,21 @@ import { toDate } from "../toDate/index.js";
  * const result = isWeekend(new Date(2014, 9, 5))
  * //=> true
  */
+
 export function isWeekend<DateType extends Date>(
   date: DateType | number | string,
+  options?: WeekendDaysOptions,
 ): boolean {
   const day = toDate(date).getDay();
-  return day === 0 || day === 6;
+  const defaultOptions = getDefaultOptions();
+  const weekendDays =
+    options?.weekendDays ??
+    options?.locale?.options?.weekendDays ??
+    defaultOptions.weekendDays ??
+    defaultOptions.locale?.options?.weekendDays ??
+    [0,6];
+
+    const aux:number[] = weekendDays;
+
+  return aux.includes(day);
 }

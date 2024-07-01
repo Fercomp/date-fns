@@ -355,6 +355,11 @@ function format(date, formatStr, options) {
     defaultOptions.locale?.options?.weekStartsOn ??
     0;
 
+  const weekendDays = options?.weekendDays ??
+    options?.locale?.options?.weekendDays ??
+    defaultOptions.weekendDays ??
+    defaultOptions.locale?.options?.weekendDays ?? [0, 6];
+
   const originalDate = (0, _index7.toDate)(date);
 
   if (!(0, _index6.isValid)(originalDate)) {
@@ -407,6 +412,7 @@ function format(date, formatStr, options) {
   const formatterOptions = {
     firstWeekContainsDate,
     weekStartsOn,
+    weekendDays,
     locale,
   };
 

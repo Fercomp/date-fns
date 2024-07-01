@@ -1,4 +1,9 @@
 import { toDate } from "./toDate.mjs";
+import { getDefaultOptions } from "./_lib/defaultOptions.mjs";
+
+/**
+ * The {@link lastDayOfWeek} function options.
+ */
 
 /**
  * @name isWeekend
@@ -19,9 +24,18 @@ import { toDate } from "./toDate.mjs";
  * const result = isWeekend(new Date(2014, 9, 5))
  * //=> true
  */
-export function isWeekend(date) {
+
+export function isWeekend(date, options) {
   const day = toDate(date).getDay();
-  return day === 0 || day === 6;
+  const defaultOptions = getDefaultOptions();
+  const weekendDays = options?.weekendDays ??
+    options?.locale?.options?.weekendDays ??
+    defaultOptions.weekendDays ??
+    defaultOptions.locale?.options?.weekendDays ?? [0, 6];
+
+  const aux = weekendDays;
+
+  return aux.includes(day);
 }
 
 // Fallback for modularized imports:

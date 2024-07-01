@@ -371,6 +371,11 @@ function parse(dateStr, formatStr, referenceDate, options) {
     defaultOptions.locale?.options?.weekStartsOn ??
     0;
 
+  const weekendDays = options?.weekendDays ??
+    options?.locale?.options?.weekendDays ??
+    defaultOptions.weekendDays ??
+    defaultOptions.locale?.options?.weekendDays ?? [0, 6];
+
   if (formatStr === "") {
     if (dateStr === "") {
       return (0, _index4.toDate)(referenceDate);
@@ -382,6 +387,7 @@ function parse(dateStr, formatStr, referenceDate, options) {
   const subFnOptions = {
     firstWeekContainsDate,
     weekStartsOn,
+    weekendDays,
     locale,
   };
 

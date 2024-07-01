@@ -169,6 +169,7 @@ export interface StepOptions {
 export interface WeekOptions {
   /** Which day the week starts on. */
   weekStartsOn?: Day;
+  weekendDays?: Day[];
 }
 /**
  * The first week contains date options. Used to build function options.

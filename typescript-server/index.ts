@@ -1,27 +1,21 @@
 import express, {Express, Request, Response } from "express";
-import { lastDayOfMonth } from "./../date-fns/src/lastDayOfMonth";
-import { isLeapYear } from "./../date-fns/src/isLeapYear";
-const data = new Date('300-07-01')
+import { isWeekend } from "./../date-fns/src/isWeekend";
+import type { WeekOptions, Day } from "./../date-fns/src/types.js";
+
+
+
+const data = new Date("2024-03-25");
+//const data = new Date();
 const port = 8000;
 
 const app: Express = express();
-const day = lastDayOfMonth(data).getDate()
-const considerGregorian = true 
+const days:Day[] = [1,2,5,6]
+const todayIsWeekend = isWeekend(data, {weekendDays:days})
 
 app.get("/", (req: Request, res: Response) => {
-    const result = isLeapYear(data);
-    res.send(`Is leap year: ${result}`);
+    res.send(`${data} is weekend ${todayIsWeekend}`);
 });
 
 app.listen(port, () => {
-    console.log("Server rodando ...3");
+    console.log(" Server rodando");
 });
-
-function sleep(data: Date) {
-    const year = data.getFullYear();
-
-    if (year < 1582) {
-        return year % 4 === 0;
-    }
-    return year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0);
-}
