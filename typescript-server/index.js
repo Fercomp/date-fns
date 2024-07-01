@@ -6,13 +6,22 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const lastDayOfMonth_1 = require("./../date-fns/src/lastDayOfMonth");
 const isLeapYear_1 = require("./../date-fns/src/isLeapYear");
-const data = new Date();
+const data = new Date('300-07-01');
 const port = 8000;
 const app = (0, express_1.default)();
 const day = (0, lastDayOfMonth_1.lastDayOfMonth)(data).getDate();
+const considerGregorian = true;
 app.get("/", (req, res) => {
-    res.send(`Is leap year: ${(0, isLeapYear_1.isLeapYear)(new Date(100, 9, 1))}`);
+    const result = (0, isLeapYear_1.isLeapYear)(data);
+    res.send(`Is leap year: ${result}`);
 });
 app.listen(port, () => {
-    console.log(" Server rodando 1");
+    console.log("Server rodando ...3");
 });
+function sleep(data) {
+    const year = data.getFullYear();
+    if (year < 1582) {
+        return year % 4 === 0;
+    }
+    return year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0);
+}
