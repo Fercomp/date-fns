@@ -13,6 +13,10 @@ import type { Locale } from "../types.js";
  * @author Sasha Koss [@kossnocorp](https://github.com/kossnocorp)
  * @author Lesha Koss [@leshakoss](https://github.com/leshakoss)
  */
+
+export { formatRelative };
+
+
 export const enUS: Locale = {
   code: "en-US",
   formatDistance: formatDistance,
