@@ -13,6 +13,8 @@ import { match } from "./_lib/match/index.js";
  * @author Guillermo Grau [@guigrpa](https://github.com/guigrpa)
  * @author Alex Vizcaino [@avizcaino](https://github.com/avizcaino)
  */
+export { formatRelative };
+
 export const ca: Locale = {
   code: "ca",
   formatDistance: formatDistance,

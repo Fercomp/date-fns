@@ -13,6 +13,8 @@ import { match } from "./_lib/match/index.js";
  * @iso-639-2 kur
  * @author Revan Sarbast [@Revan99]{@link https://github.com/Revan99}
  */
+export { formatRelative };
+
 export const ckb: Locale = {
   code: "ckb",
   formatDistance,

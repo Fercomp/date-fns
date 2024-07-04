@@ -12,6 +12,8 @@ import { match } from "./_lib/match/index.js";
  * @iso-639-2 bos
  * @author Branislav Lazić [@branislavlazic](https://github.com/branislavlazic)
  */
+export { formatRelative };
+
 export const bs: Locale = {
   code: "bs",
   formatDistance: formatDistance,

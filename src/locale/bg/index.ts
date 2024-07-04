@@ -13,6 +13,8 @@ import { match } from "./_lib/match/index.js";
  * @author Nikolay Stoynov [@arvigeus](https://github.com/arvigeus)
  * @author Tsvetan Ovedenski [@fintara](https://github.com/fintara)
  */
+export { formatRelative };
+
 export const bg: Locale = {
   code: "bg",
   formatDistance: formatDistance,

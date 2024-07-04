@@ -12,6 +12,8 @@ import { formatLong } from "./_lib/formatLong/index.js";
  * @iso-639-2 eng
  * @author Shaila Kavrakova [@shaykav](https://github.com/shaykav)
  */
+export { formatRelative };
+
 export const enZA: Locale = {
   code: "en-ZA",
   formatDistance: formatDistance,

@@ -16,6 +16,8 @@ import type { Locale } from "../types.js";
  * @author RomanErnst [@pex](https://github.com/pex)
  * @author Philipp Keck [@Philipp91](https://github.com/Philipp91)
  */
+export { formatRelative };
+
 export const de: Locale = {
   code: "de",
   formatDistance: formatDistance,

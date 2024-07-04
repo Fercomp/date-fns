@@ -12,6 +12,8 @@ import type { Locale } from "../types.js";
  * @iso-639-2 eng
  * @author Julien Malige [@JulienMalige](https://github.com/JulienMalige)
  */
+export { formatRelative };
+
 export const enAU: Locale = {
   code: "en-AU",
   formatDistance: formatDistance,

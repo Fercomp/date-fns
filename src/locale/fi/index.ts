@@ -14,6 +14,8 @@ import { match } from "./_lib/match/index.js";
  * @author Edo Rivai [@mikolajgrzyb](https://github.com/mikolajgrzyb)
  * @author Samu Juvonen [@sjuvonen](https://github.com/sjuvonen)
  */
+export { formatRelative };
+
 export const fi: Locale = {
   code: "fi",
   formatDistance: formatDistance,

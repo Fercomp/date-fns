@@ -12,6 +12,8 @@ import { match } from "./_lib/match/index.js";
  * @iso-639-2 est
  * @author Priit Hansen [@HansenPriit](https://github.com/priithansen)
  */
+export { formatRelative };
+
 export const et: Locale = {
   code: "et",
   formatDistance: formatDistance,

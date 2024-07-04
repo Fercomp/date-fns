@@ -13,6 +13,8 @@ import type { Locale } from "../types.js";
  * @author Abdallah Hassan [@AbdallahAHO](https://github.com/AbdallahAHO)
  * @author Koussay Haj Kacem [@essana3](https://github.com/essana3)
  */
+export { formatRelative };
+
 export const ar: Locale = {
   code: "ar",
   formatDistance: formatDistance,

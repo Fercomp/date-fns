@@ -17,6 +17,8 @@ import type { Locale } from "../types.js";
 export { formatRelative };
 
 
+export { formatRelative };
+
 export const enUS: Locale = {
   code: "en-US",
   formatDistance: formatDistance,

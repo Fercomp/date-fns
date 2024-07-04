@@ -12,6 +12,8 @@ import { match } from "./_lib/match/index.js";
  * @iso-639-2 aze
  */
 
+export { formatRelative };
+
 export const az: Locale = {
   code: "az",
   formatDistance: formatDistance,

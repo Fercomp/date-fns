@@ -13,6 +13,8 @@ import type { Locale } from "../types.js";
  * @author Badreddine Boumaza [@badre429](https://github.com/badre429)
  * @author Ahmed ElShahat [@elshahat](https://github.com/elshahat)
  */
+export { formatRelative };
+
 export const arDZ: Locale = {
   code: "ar-DZ",
   formatDistance: formatDistance,

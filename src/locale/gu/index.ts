@@ -12,6 +12,8 @@ import { match } from "./_lib/match/index.js";
  * @iso-639-2 guj
  * @author Manaday Mavani [@ManadayM](https://github.com/manadaym)
  */
+export { formatRelative };
+
 export const gu: Locale = {
   code: "gu",
   formatDistance: formatDistance,

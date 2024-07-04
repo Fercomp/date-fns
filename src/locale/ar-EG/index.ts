@@ -12,6 +12,8 @@ import type { Locale } from "../types.js";
  * @iso-639-2 ara
  * @author AbdAllah AbdElFattah [@AbdAllahAbdElFattah13](https://github.com/AbdAllahAbdElFattah13)
  */
+export { formatRelative };
+
 export const arEG: Locale = {
   code: "ar-EG",
   formatDistance: formatDistance,

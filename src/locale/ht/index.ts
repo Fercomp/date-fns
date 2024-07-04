@@ -13,6 +13,8 @@ import { match } from "./_lib/match/index.js";
  * @author Rubens Mariuzzo [@rmariuzzo](https://github.com/rmariuzzo)
  * @author Watson Marcelain [@watsongm24](https://github.com/watsongm24)
  */
+export { formatRelative };
+
 export const ht: Locale = {
   code: "ht",
   formatDistance: formatDistance,

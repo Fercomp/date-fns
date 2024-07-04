@@ -15,6 +15,8 @@ import { match } from "./_lib/match/index.js";
  * @author [@kgram](https://github.com/kgram)
  * @author [@stefanbugge](https://github.com/stefanbugge)
  */
+export { formatRelative };
+
 export const da: Locale = {
   code: "da",
   formatDistance: formatDistance,

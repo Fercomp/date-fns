@@ -13,6 +13,8 @@ import { match } from "./_lib/match/index.js";
  * @author Alberto Doval - Cocodin Technology[@cocodinTech](https://github.com/cocodinTech)
  * @author Fidel Pita [@fidelpita](https://github.com/fidelpita)
  */
+export { formatRelative };
+
 export const gl: Locale = {
   code: "gl",
   formatDistance: formatDistance,
