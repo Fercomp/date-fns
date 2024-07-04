@@ -14,12 +14,6 @@ import { match } from "./_lib/match/index.js";
  * @author Eduardo Pardo [@eduardopsll](https://github.com/eduardopsll)
  * @author Zoltan Szepesi [@twodcube](https://github.com/twodcube)
  */
-export { formatRelative };
-
-export { formatRelative };
-
-export { formatRelative };
-
 export const hu: Locale = {
   code: "hu",
   formatDistance: formatDistance,

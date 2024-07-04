@@ -13,12 +13,6 @@ import { match } from "./_lib/match/index.js";
  * @author Fanis Katsimpas [@fanixk](https://github.com/fanixk)
  * @author Theodoros Orfanidis [@teoulas](https://github.com/teoulas)
  */
-export { formatRelative };
-
-export { formatRelative };
-
-export { formatRelative };
-
 export const el: Locale = {
   code: "el",
   formatDistance: formatDistance,

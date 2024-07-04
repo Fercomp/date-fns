@@ -12,12 +12,6 @@ import { match } from "./_lib/match/index.js";
  * @iso-639-2 ira
  * @author Morteza Ziyae [@mort3za](https://github.com/mort3za)
  */
-export { formatRelative };
-
-export { formatRelative };
-
-export { formatRelative };
-
 export const faIR: Locale = {
   code: "fa-IR",
   formatDistance: formatDistance,

@@ -15,12 +15,6 @@ import { match } from "./_lib/match/index.js";
  * @author Budi Irawan [@deerawan](https://github.com/deerawan)
  * @author Try Ajitiono [@imballinst](https://github.com/imballinst)
  */
-export { formatRelative };
-
-export { formatRelative };
-
-export { formatRelative };
-
 export const id: Locale = {
   code: "id",
   formatDistance: formatDistance,

@@ -12,12 +12,6 @@ import { match } from "./_lib/match/index.js";
  * @iso-639-2 afr
  * @author Marnus Weststrate [@marnusw](https://github.com/marnusw)
  */
-export { formatRelative };
-
-export { formatRelative };
-
-export { formatRelative };
-
 export const af: Locale = {
   code: "af",
   formatDistance: formatDistance,

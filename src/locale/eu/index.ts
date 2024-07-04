@@ -12,12 +12,6 @@ import { match } from "./_lib/match/index.js";
  * @iso-639-2 eus
  * @author Jacob Söderblom [@JacobSoderblom](https://github.com/JacobSoderblom)
  */
-export { formatRelative };
-
-export { formatRelative };
-
-export { formatRelative };
-
 export const eu: Locale = {
   code: "eu",
   formatDistance: formatDistance,

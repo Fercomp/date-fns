@@ -12,12 +12,6 @@ import { match } from "./_lib/match/index.js";
  * @iso-639-2 hin
  * @author Mukesh Mandiwal [@mukeshmandiwal](https://github.com/mukeshmandiwal)
  */
-export { formatRelative };
-
-export { formatRelative };
-
-export { formatRelative };
-
 export const hi: Locale = {
   code: "hi",
   formatDistance: formatDistance,

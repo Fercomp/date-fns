@@ -12,12 +12,6 @@ import { match } from "./_lib/match/index.js";
  * @iso-639-2 heb
  * @author Nir Lahad [@nirlah](https://github.com/nirlah)
  */
-export { formatRelative };
-
-export { formatRelative };
-
-export { formatRelative };
-
 export const he: Locale = {
   code: "he",
   formatDistance: formatDistance,

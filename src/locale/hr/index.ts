@@ -14,12 +14,6 @@ import { match } from "./_lib/match/index.js";
  * @author Manico [@manico](https://github.com/manico)
  * @author Ivan Jeržabek [@jerzabek](https://github.com/jerzabek)
  */
-export { formatRelative };
-
-export { formatRelative };
-
-export { formatRelative };
-
 export const hr: Locale = {
   code: "hr",
   formatDistance: formatDistance,

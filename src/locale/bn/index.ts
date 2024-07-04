@@ -13,12 +13,6 @@ import { match } from "./_lib/match/index.js";
  * @author Touhidur Rahman [@touhidrahman](https://github.com/touhidrahman)
  * @author Farhad Yasir [@nutboltu](https://github.com/nutboltu)
  */
-export { formatRelative };
-
-export { formatRelative };
-
-export { formatRelative };
-
 export const bn: Locale = {
   code: "bn",
   formatDistance: formatDistance,

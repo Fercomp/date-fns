@@ -12,12 +12,6 @@ import type { Locale } from "../types.js";
  * @iso-639-2 epo
  * @author date-fns
  */
-export { formatRelative };
-
-export { formatRelative };
-
-export { formatRelative };
-
 export const eo: Locale = {
   code: "eo",
   formatDistance: formatDistance,

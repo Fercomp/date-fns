@@ -13,12 +13,6 @@ import { localize } from "./_lib/localize/index.js";
  * @iso-639-2 deu
  * @author Christoph Tobias Stenglein [@cstenglein](https://github.com/cstenglein)
  */
-export { formatRelative };
-
-export { formatRelative };
-
-export { formatRelative };
-
 export const deAT: Locale = {
   code: "de-AT",
   formatDistance: formatDistance,

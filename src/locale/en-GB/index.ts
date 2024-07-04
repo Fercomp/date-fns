@@ -12,12 +12,6 @@ import { formatLong } from "./_lib/formatLong/index.js";
  * @iso-639-2 eng
  * @author Alex [@glintik](https://github.com/glintik)
  */
-export { formatRelative };
-
-export { formatRelative };
-
-export { formatRelative };
-
 export const enGB: Locale = {
   code: "en-GB",
   formatDistance: formatDistance,

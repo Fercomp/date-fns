@@ -12,12 +12,6 @@ import type { Locale } from "../types.js";
  * @iso-639-2 ara
  * @author Achraf Rrami [@rramiachraf](https://github.com/rramiachraf)
  */
-export { formatRelative };
-
-export { formatRelative };
-
-export { formatRelative };
-
 export const arMA: Locale = {
   code: "ar-MA",
   formatDistance: formatDistance,

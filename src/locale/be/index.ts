@@ -13,12 +13,6 @@ import { match } from "./_lib/match/index.js";
  * @author Kiryl Anokhin [@alyrik](https://github.com/alyrik)
  * @author Martin Wind [@arvigeus](https://github.com/mawi12345)
  */
-export { formatRelative };
-
-export { formatRelative };
-
-export { formatRelative };
-
 export const be: Locale = {
   code: "be",
   formatDistance: formatDistance,

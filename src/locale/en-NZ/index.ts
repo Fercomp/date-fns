@@ -12,12 +12,6 @@ import { formatLong } from "./_lib/formatLong/index.js";
  * @iso-639-2 eng
  * @author Murray Lucas [@muntact](https://github.com/muntact)
  */
-export { formatRelative };
-
-export { formatRelative };
-
-export { formatRelative };
-
 export const enNZ: Locale = {
   code: "en-NZ",
   formatDistance: formatDistance,

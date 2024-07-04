@@ -12,12 +12,6 @@ import { match } from "./_lib/match/index.js";
  * @iso-639-2 bel
  * @author Ryhor Nopears [@nopears](https://github.com/nopears)
  */
-export { formatRelative };
-
-export { formatRelative };
-
-export { formatRelative };
-
 export const beTarask: Locale = {
   code: "be-tarask",
   formatDistance: formatDistance,

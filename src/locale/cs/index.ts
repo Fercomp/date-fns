@@ -14,12 +14,6 @@ import { match } from "./_lib/match/index.js";
  * @author Pavel Hrách [@SilenY](https://github.com/SilenY)
  * @author Jozef Bíroš [@JozefBiros](https://github.com/JozefBiros)
  */
-export { formatRelative };
-
-export { formatRelative };
-
-export { formatRelative };
-
 export const cs: Locale = {
   code: "cs",
   formatDistance: formatDistance,
