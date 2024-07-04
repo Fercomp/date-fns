@@ -17,6 +17,12 @@ import { formatRelative } from "./_lib/formatRelative/index.js";
  * @author Van Vuong Ngo [@vanvuongngo](https://github.com/vanvuongngo)
  * @author Alex Hoeing [@dcbn](https://github.com/dcbn)
  */
+export { formatRelative };
+
+export { formatRelative };
+
+export { formatRelative };
+
 export const frCH: Locale = {
   code: "fr-CH",
   formatDistance: formatDistance,

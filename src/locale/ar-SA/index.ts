@@ -12,6 +12,12 @@ import { match } from "./_lib/match/index.js";
  * @iso-639-2 ara
  * @author Dhaifallah Alwadani [@dalwadani](https://github.com/dalwadani)
  */
+export { formatRelative };
+
+export { formatRelative };
+
+export { formatRelative };
+
 export const arSA: Locale = {
   code: "ar-SA",
   formatDistance: formatDistance,

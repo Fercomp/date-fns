@@ -12,6 +12,12 @@ import { formatLong } from "./_lib/formatLong/index.js";
  * @iso-639-2 eng
  * @author Galeel Bhasha Satthar [@gbhasha](https://github.com/gbhasha)
  */
+export { formatRelative };
+
+export { formatRelative };
+
+export { formatRelative };
+
 export const enIN: Locale = {
   code: "en-IN",
   formatDistance: formatDistance,

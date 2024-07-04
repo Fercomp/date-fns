@@ -12,6 +12,12 @@ import { formatLong } from "../en-GB/_lib/formatLong/index.js";
  * @iso-639-2 eng
  * @author Tetiana [@tan75](https://github.com/tan75)
  */
+export { formatRelative };
+
+export { formatRelative };
+
+export { formatRelative };
+
 export const enIE: Locale = {
   code: "en-IE",
   formatDistance: formatDistance,

@@ -12,6 +12,12 @@ import type { Locale } from "../types.js";
  * @iso-639-2 ara
  * @author Koussay Haj Kacem [@essana3](https://github.com/essana3)
  */
+export { formatRelative };
+
+export { formatRelative };
+
+export { formatRelative };
+
 export const arTN: Locale = {
   code: "ar-TN",
   formatDistance: formatDistance,

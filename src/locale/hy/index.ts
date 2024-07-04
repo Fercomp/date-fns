@@ -12,6 +12,12 @@ import { match } from "./_lib/match/index.js";
  * @iso-639-2 arm
  * @author Alex Igityan [@alexigityan](https://github.com/alexigityan)
  */
+export { formatRelative };
+
+export { formatRelative };
+
+export { formatRelative };
+
 export const hy: Locale = {
   code: "hy",
   formatDistance: formatDistance,

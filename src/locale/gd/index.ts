@@ -12,6 +12,12 @@ import { match } from "./_lib/match/index.js";
  * @iso-639-2 gla
  * @author Lee Driscoll [@leedriscoll](https://github.com/leedriscoll)
  */
+export { formatRelative };
+
+export { formatRelative };
+
+export { formatRelative };
+
 export const gd: Locale = {
   code: "gd",
   formatDistance: formatDistance,

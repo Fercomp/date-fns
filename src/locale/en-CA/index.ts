@@ -13,6 +13,12 @@ import { formatLong } from "./_lib/formatLong/index.js";
  * @author Mark Owsiak [@markowsiak](https://github.com/markowsiak)
  * @author Marco Imperatore [@mimperatore](https://github.com/mimperatore)
  */
+export { formatRelative };
+
+export { formatRelative };
+
+export { formatRelative };
+
 export const enCA: Locale = {
   code: "en-CA",
   formatDistance: formatDistance,

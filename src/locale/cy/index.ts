@@ -12,6 +12,12 @@ import { match } from "./_lib/match/index.js";
  * @iso-639-2 cym
  * @author Elwyn Malethan [@elmomalmo](https://github.com/elmomalmo)
  */
+export { formatRelative };
+
+export { formatRelative };
+
+export { formatRelative };
+
 export const cy: Locale = {
   code: "cy",
   formatDistance: formatDistance,

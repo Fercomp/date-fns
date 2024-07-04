@@ -16,6 +16,12 @@ import { formatLong } from "./_lib/formatLong/index.js";
  * @author François B [@fbonzon](https://github.com/fbonzon)
  * @author Gabriele Petrioli [@gpetrioli](https://github.com/gpetrioli)
  */
+export { formatRelative };
+
+export { formatRelative };
+
+export { formatRelative };
+
 export const frCA: Locale = {
   code: "fr-CA",
   formatDistance: formatDistance,

@@ -13,6 +13,12 @@ import { match } from "./_lib/match/index.js";
  * @author Jean Dupouy [@izeau](https://github.com/izeau)
  * @author François B [@fbonzon](https://github.com/fbonzon)
  */
+export { formatRelative };
+
+export { formatRelative };
+
+export { formatRelative };
+
 export const fr: Locale = {
   code: "fr",
   formatDistance: formatDistance,

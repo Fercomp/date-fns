@@ -16,6 +16,12 @@ import type { Locale } from "../types.js";
  * @author Gastón Haro [@harogaston](https://github.com/harogaston)
  * @author Yago Carballo [@YagoCarballo](https://github.com/YagoCarballo)
  */
+export { formatRelative };
+
+export { formatRelative };
+
+export { formatRelative };
+
 export const es: Locale = {
   code: "es",
   formatDistance: formatDistance,

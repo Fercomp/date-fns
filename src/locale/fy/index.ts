@@ -12,6 +12,12 @@ import { match } from "./_lib/match/index.js";
  * @iso-639-2 fry
  * @author Damon Asberg [@damon02](https://github.com/damon02)
  */
+export { formatRelative };
+
+export { formatRelative };
+
+export { formatRelative };
+
 export const fy: Locale = {
   code: "fy",
   formatDistance: formatDistance,
