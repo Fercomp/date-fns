@@ -10,6 +10,7 @@ import { toDate } from "../toDate/index.js";
  *
  * @description
  * Get the number of full months between the given dates using trunc as a default rounding method.
+ * Note that the order in which dates are passed as arguments matter.
  *
  * @typeParam DateType - The `Date` type, the function operates on. Gets inferred from passed arguments. Allows to use extensions like [`UTCDate`](https://github.com/date-fns/utc).
  *
