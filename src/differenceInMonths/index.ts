@@ -17,7 +17,7 @@ import { toDate } from "../toDate/index.js";
  * @param dateLeft - The later date
  * @param dateRight - The earlier date
  *
- * @returns The number of full months
+ * @returns The difference between the dates in full months (can be negative)
  *
  * @example
  * // How many full months are between 31 January 2014 and 1 September 2014?
