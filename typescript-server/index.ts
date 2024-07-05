@@ -9,19 +9,10 @@ const day = lastDayOfMonth(data).getDate()
 const considerGregorian = true 
 
 app.get("/", (req: Request, res: Response) => {
-    const result = isLeapYear(data);
+    const result = isLeapYear(data, true);
     res.send(`Is leap year: ${result}`);
 });
 
 app.listen(port, () => {
     console.log("Server rodando ...3");
 });
-
-function sleep(data: Date) {
-    const year = data.getFullYear();
-
-    if (year < 1582) {
-        return year % 4 === 0;
-    }
-    return year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0);
-}

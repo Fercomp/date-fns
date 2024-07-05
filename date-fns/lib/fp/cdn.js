@@ -4152,11 +4152,10 @@ function ownKeys(e, r) {var t = Object.keys(e);if (Object.getOwnPropertySymbols)
   // lib/fp/getDaysInMonth.mjs
   var getDaysInMonth3 = convertToFP(getDaysInMonth, 1);
   // lib/isLeapYear.mjs
-  function isLeapYear(date) {
+  function isLeapYear(date) {var isJulianCalendarConsidered = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
     var _date = toDate(date);
     var year = _date.getFullYear();
-    console.log("pfffff");
-    if (year < 1582) {
+    if (isJulianCalendarConsidered && year < 1582) {
       return year % 4 === 0;
     }
     return year % 400 === 0 || year % 4 === 0 && year % 100 !== 0;
@@ -4327,7 +4326,6 @@ function ownKeys(e, r) {var t = Object.keys(e);if (Object.getOwnPropertySymbols)
     var month = _date.getMonth();
     _date.setFullYear(_date.getFullYear(), month + 1, 0);
     _date.setHours(0, 0, 0, 0);
-    console.log("codigo alterado");
     return _date;
   }
 
@@ -7220,7 +7218,7 @@ function ownKeys(e, r) {var t = Object.keys(e);if (Object.getOwnPropertySymbols)
     fp: exports_fp });
 
 
-  //# debugId=D3122A0DCDA79E5964756e2164756e21
+  //# debugId=DD0FAED6F2154BDC64756e2164756e21
 })();
 
 //# sourceMappingURL=cdn.js.map

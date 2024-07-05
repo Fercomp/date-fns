@@ -21,11 +21,11 @@ import { toDate } from "../toDate/index.js";
  */
 export function isLeapYear<DateType extends Date>(
   date: DateType | number | string,
+  isJulianCalendarConsidered: boolean = false
 ): boolean {
   const _date = toDate(date);
   const year = _date.getFullYear();
-  console.log("pfffff");
-  if (year < 1582) {
+  if (isJulianCalendarConsidered && year < 1582) {
        return year % 4 === 0;
   }
   return year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0);

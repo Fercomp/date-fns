@@ -3868,11 +3868,10 @@ function ownKeys(e, r) {var t = Object.keys(e);if (Object.getOwnPropertySymbols)
     return lastDayOfMonth.getDate();
   }
   // lib/isLeapYear.mjs
-  function _isLeapYear(date) {
+  function _isLeapYear(date) {var isJulianCalendarConsidered = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
     var _date = _toDate(date);
     var year = _date.getFullYear();
-    console.log("pfffff");
-    if (year < 1582) {
+    if (isJulianCalendarConsidered && year < 1582) {
       return year % 4 === 0;
     }
     return year % 400 === 0 || year % 4 === 0 && year % 100 !== 0;
@@ -3992,7 +3991,6 @@ function ownKeys(e, r) {var t = Object.keys(e);if (Object.getOwnPropertySymbols)
     var month = _date.getMonth();
     _date.setFullYear(_date.getFullYear(), month + 1, 0);
     _date.setHours(0, 0, 0, 0);
-    console.log("codigo alterado");
     return _date;
   }
 
@@ -6597,7 +6595,7 @@ function ownKeys(e, r) {var t = Object.keys(e);if (Object.getOwnPropertySymbols)
   exports_lib);
 
 
-  //# debugId=87F4AD5F3F38AB7E64756e2164756e21
+  //# debugId=214F2AC292A185C264756e2164756e21
 })();
 
 //# sourceMappingURL=cdn.js.map

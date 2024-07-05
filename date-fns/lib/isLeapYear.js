@@ -21,11 +21,10 @@ var _index = require("./toDate.js");
  * const result = isLeapYear(new Date(2012, 8, 1))
  * //=> true
  */
-function isLeapYear(date) {
+function isLeapYear(date, isJulianCalendarConsidered = false) {
   const _date = (0, _index.toDate)(date);
   const year = _date.getFullYear();
-  console.log("pfffff");
-  if (year < 1582) {
+  if (isJulianCalendarConsidered && year < 1582) {
     return year % 4 === 0;
   }
   return year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0);

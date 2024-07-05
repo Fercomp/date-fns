@@ -19,11 +19,10 @@ import { toDate } from "./toDate.mjs";
  * const result = isLeapYear(new Date(2012, 8, 1))
  * //=> true
  */
-export function isLeapYear(date) {
+export function isLeapYear(date, isJulianCalendarConsidered = false) {
   const _date = toDate(date);
   const year = _date.getFullYear();
-  console.log("pfffff");
-  if (year < 1582) {
+  if (isJulianCalendarConsidered && year < 1582) {
     return year % 4 === 0;
   }
   return year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0);

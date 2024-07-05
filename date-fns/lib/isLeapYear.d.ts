@@ -19,4 +19,5 @@
  */
 export declare function isLeapYear<DateType extends Date>(
   date: DateType | number | string,
+  isJulianCalendarConsidered?: boolean,
 ): boolean;

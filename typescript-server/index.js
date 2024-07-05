@@ -12,16 +12,9 @@ const app = (0, express_1.default)();
 const day = (0, lastDayOfMonth_1.lastDayOfMonth)(data).getDate();
 const considerGregorian = true;
 app.get("/", (req, res) => {
-    const result = (0, isLeapYear_1.isLeapYear)(data);
+    const result = (0, isLeapYear_1.isLeapYear)(data, true);
     res.send(`Is leap year: ${result}`);
 });
 app.listen(port, () => {
     console.log("Server rodando ...3");
 });
-function sleep(data) {
-    const year = data.getFullYear();
-    if (year < 1582) {
-        return year % 4 === 0;
-    }
-    return year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0);
-}

@@ -27,6 +27,5 @@ export function lastDayOfMonth<DateType extends Date>(
   const month = _date.getMonth();
   _date.setFullYear(_date.getFullYear(), month + 1, 0);
   _date.setHours(0, 0, 0, 0);
-  console.log("codigo alterado");
   return _date;
 }
